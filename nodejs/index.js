@@ -1,10 +1,15 @@
 import http from 'http'
 // import { myName, meriBahena, myLoveName } from './own_modules/features.js'
 import {generateLovePercent} from './own_modules/generateLovePercent.js'
+import fs from 'fs';
 
 const server = http.createServer((req,res) => {
     if(req.url == "/"){
-        res.end('<h1>home</h1>');
+        
+          fs.readFile("./index.html",(error,home)=>{
+            res.end(home )
+          })
+       
     }else if(req.url == "/generatelove"){
       res.end(`<h1>Love is ${generateLovePercent()} </h1>`);
   }
