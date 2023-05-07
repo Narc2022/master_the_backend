@@ -1,14 +1,13 @@
-// const http = require("http");
-// const myName = require("./features")
-
 import http from 'http'
-import myName from './features.js'
+// import { myName, meriBahena, myLoveName } from './own_modules/features.js'
+import {generateLovePercent} from './own_modules/generateLovePercent.js'
 
 const server = http.createServer((req,res) => {
-
     if(req.url == "/"){
         res.end('<h1>home</h1>');
-    }
+    }else if(req.url == "/generatelove"){
+      res.end(`<h1>Love is ${generateLovePercent()} </h1>`);
+  }
     else if(req.url === "/about"){
         res.end('<h1>about</h1>');
     }else if(req.url === "/contact"){

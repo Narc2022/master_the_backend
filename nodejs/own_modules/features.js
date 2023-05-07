@@ -4,5 +4,7 @@
 // The following example creates a module that returns a date and time object:
 
 const myName = "Mr Sachin";
+const meriBahena = "Ranjani Singh";
+const myLoveName = "Mrs Vibha Singh Thakur";
 
- export default myName;
+export default { myName, meriBahena, myLoveName };
